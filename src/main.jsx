@@ -12,6 +12,7 @@ import MyPosts from './pages/MyPosts.jsx'
 import AuthLayout from './components/AuthLayout.jsx'
 import Post from './pages/Post.jsx'
 import Error from './pages/Error.jsx'
+import NetworkError from './pages/NetworkError.jsx'
 
 
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       }
      
     ]
+  },
+  {
+    path:"/network-error",
+    element:<NetworkError/>
   }
 ])
 

@@ -13,12 +13,13 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const status = useSelector((state)=>state.userInfo.status);
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
  useEffect(()=>{
 
   authServices.getCurrentUser().then((userData) => {
-    
-    if (userData) {
+
+    if (userData.$id) {
       dispatch(login(userData));
 
       services.getPosts([]).then((post) => {
@@ -28,6 +29,10 @@ function Home() {
 
     }
     else{
+
+      if(userData.includes("Network")){
+        navigate("/network-error")
+      }
       setLoading(false);
       setPosts([])
     }

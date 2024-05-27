@@ -9,7 +9,6 @@ export class AuthServices {
     this.client
       .setEndpoint(conf.appwriteUrl)
       .setProject(conf.appwriteProjectId);
-
     this.account = new Account(this.client);
   }
   async createAccount({ email, password, fullname }) {
@@ -27,6 +26,7 @@ export class AuthServices {
       }
     } catch (error) {
       console.log("This is createAccount error", error);
+      return error.message;
     }
   }
 
@@ -35,6 +35,7 @@ export class AuthServices {
       return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
       console.log("This is login error", error);
+      return error.message;
     }
   }
 
@@ -44,8 +45,8 @@ export class AuthServices {
         return await this.account.get();
     } catch (error) {
      console.log("THis is getCurrentUser Error :",error)
+     return error.message;
     }
-    return false;
   }
   
   async logout() {
@@ -53,6 +54,7 @@ export class AuthServices {
        await this.account.deleteSession("current");
     } catch (error) {
       console.log("This is logout error", error);
+      return error.message;
     }
   
   }
