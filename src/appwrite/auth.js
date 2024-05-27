@@ -11,16 +11,17 @@ export class AuthServices {
       .setProject(conf.appwriteProjectId);
     this.account = new Account(this.client);
   }
+  
   async createAccount({ email, password, fullname }) {
     try {
       const userAccount = await this.account.create(
         ID.unique(),
         email,
         password,
-        fullname
+        fullname,
       );
       if (userAccount) {
-        return this.login({email,password});
+        return this.login({ email, password });
       } else {
         return userAccount;
       }
@@ -39,26 +40,23 @@ export class AuthServices {
     }
   }
 
-
-  async getCurrentUser(){
+  async getCurrentUser() {
     try {
-        return await this.account.get();
+      return await this.account.get();
     } catch (error) {
-     console.log("THis is getCurrentUser Error :",error)
-     return error.message;
+      console.log("THis is getCurrentUser Error :", error);
+      return error.message;
     }
   }
-  
+
   async logout() {
     try {
-       await this.account.deleteSession("current");
+      await this.account.deleteSession("current");
     } catch (error) {
       console.log("This is logout error", error);
       return error.message;
     }
-  
   }
-
 }
 
 const authServices = new AuthServices();

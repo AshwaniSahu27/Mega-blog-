@@ -17,9 +17,9 @@ function AllPosts() {
   return loading ? (
     <Loading />
   ) : (
-    <div className="py-10 px-10 bg-[#45474B]">
+    <div className="bg-[#45474B] px-10 py-10">
       <div
-        className="flex gap-4 flex-wrap
+        className="flex flex-wrap gap-4
     "
       >
         {posts.map((post) => {

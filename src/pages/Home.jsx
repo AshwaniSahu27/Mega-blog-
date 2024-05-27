@@ -11,58 +11,50 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const status = useSelector((state)=>state.userInfo.status);
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const status = useSelector((state) => state.userInfo.status);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
- useEffect(()=>{
+  useEffect(() => {
+    authServices.getCurrentUser().then((userData) => {
+      if (userData.$id) {
+        dispatch(login(userData));
 
-  authServices.getCurrentUser().then((userData) => {
-
-    if (userData.$id) {
-      dispatch(login(userData));
-
-      services.getPosts([]).then((post) => {
+        services.getPosts([]).then((post) => {
           setPosts(post.documents);
           setLoading(false);
         });
-
-    }
-    else{
-
-      if(userData.includes("Network")){
-        navigate("/network-error")
+      } else {
+        if (userData.includes("Network")) {
+          navigate("/network-error");
+        }
+        setLoading(false);
+        setPosts([]);
       }
-      setLoading(false);
-      setPosts([])
-    }
-  
-  })
-
-
- },[status])
+    });
+  }, [status]);
 
   if (loading) {
-    return <Loading/>
+    return <Loading />;
   } else {
-
     if (posts.length === 0) {
       return (
-        <div className="w-full h-[50vh] py-8 text-center bg-slate-700">
-            <div className="flex flex-wrap">
-              <div className="p-2 w-full">
-                <h1 onClick={()=>dispatch(logOpen())}  className="text-2xl cursor-pointer font-bold hover:text-gray-500">
-                  Login to read posts
-                </h1>
-              </div>
+        <div className="h-[50vh] w-full bg-slate-700 py-8 text-center">
+          <div className="flex flex-wrap">
+            <div className="w-full p-2">
+              <h1
+                onClick={() => dispatch(logOpen())}
+                className="cursor-pointer text-2xl font-bold hover:text-gray-500"
+              >
+                Login to read posts
+              </h1>
             </div>
+          </div>
         </div>
       );
     }
     if (posts.length > 0) {
-      return <AllPosts />
-      
-      
+      return <AllPosts />;
     }
   }
 }
