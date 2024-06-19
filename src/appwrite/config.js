@@ -61,6 +61,7 @@ export class Services {
       console.log("This is deletePost error : ", error);
     }
   }
+
   async getPost(slug) {
     try {
        return await this.databases.getDocument(
@@ -117,6 +118,9 @@ export class Services {
       console.log("This is deleteFile error :", error);
     }
   }
+
+
+
 
   getFilePreview(fileId){
       return this.bucket.getFilePreview(

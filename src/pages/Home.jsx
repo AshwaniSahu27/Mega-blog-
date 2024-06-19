@@ -48,6 +48,15 @@ function Home() {
               >
                 Login to read posts
               </h1>
+              <h1 className="mt-5 text-zinc-900 flex flex-col justify-start items-center" >
+                Here is test Command To login: 
+
+                <h2 className=" text-blue-400 text-2xl">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Email  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: test@test.com</h2>
+                <h2 className=" text-green-400 text-2xl"> password &nbsp;:&nbsp; test1234</h2>
+                 
+                 
+              </h1>
+
             </div>
           </div>
         </div>
