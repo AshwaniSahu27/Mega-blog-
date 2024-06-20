@@ -32,7 +32,7 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="px-5 py-8 md:flex md:gap-3">
+    <div className="px-5 post py-8 md:flex md:gap-3">
       <div className="md:w-1/2">
         <div className="relative flex w-full flex-col justify-center rounded-xl border p-2 px-3 py-4">
           <img
@@ -55,7 +55,7 @@ export default function Post() {
           )}
 
           <div className=" w-full px-1 py-2">
-            <h1 className="text-2xl font-bold">{post.title}</h1>
+            <h1 className="text-2xl font-bold text-white">{post.title}</h1>
           </div>
         </div>
       </div>

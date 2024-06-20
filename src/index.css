@@ -12,7 +12,7 @@
 .active{
     text-decoration: underline #f70;
 }
-.login{
+.login, .post{
     background-color: hsl(224deg 24.32% 36.27%);
 }
 

@@ -5,7 +5,7 @@ import { Controller } from 'react-hook-form'
 function RTE({name,label,control,defaultValue=""}) {
 
   return (
-    <div className=' w-full flex justify-between'> 
+    <div className=' w-full  flex justify-between'> 
     {label && <label className='inline-block mb-1 pl-1 text-xl w-28'>{label}</label>}
 
     <Controller

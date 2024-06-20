@@ -83,7 +83,7 @@ export default function PostForm({ post }) {
                 <Input
                     label="Title :"
                     placeholder="Title"
-                    className=" w-full h-10 rounded-[5px]"
+                    className=" w-full h-10 rounded-[5px] "
                     {...register("title", { required: true })}
                 />
                 <Input
@@ -101,7 +101,7 @@ export default function PostForm({ post }) {
                 <Input
                     label="BlogImage :"
                     type="file"
-                    className=""
+                    className=" "
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !post })}
                 />
@@ -117,10 +117,10 @@ export default function PostForm({ post }) {
                 <Select
                     options={["Active", "Inactive"]}
                     label="Status"
-                    className="mb-4"
+                    className="mb-4 "
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : "bg-green-500"} className="w-full  bg-slate-300 py-2 rounded-md">
+                <Button type="submit" bgColor={post ? "bg-green-500" : "bg-green-500"} className="w-full  bg-blue-300 text-black py-2 rounded-md">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>
