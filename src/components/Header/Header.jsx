@@ -6,12 +6,14 @@ import LogOut from "./LogOut";
 import { logOpen, signOpen } from "../../store/actionsSlice";
 import Signup from "../Signup";
 import Login from "../Login";
+import search from "../../../public/search.svg"
+import press from "../../../public/press.svg"
 
 function Header() {
   const authStatus = useSelector((state) => state.userInfo.status);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const state = useSelector((state)=>state.actions)
+  const state = useSelector((state) => state.actions);
 
   const navItems = [
     {
@@ -42,12 +44,30 @@ function Header() {
   ];
 
   return (
-    <div className="w-full  bg-[#daebf4]">
-      <nav className="flex justify-between py-2 px-3">
+    <div className="header w-full ">
+      <nav className="flex justify-between px-3 py-2">
+        <div className="flex gap-10 w-full ml-6">
+
+        
         <div>
           <Logo />
         </div>
-        <ul className="flex">
+        <button data-open-modal="" className="bg-black/60 border-[1px]  border-slate-600 rounded-md w-[35%] text-white flex justify-between items-center gap-3">
+        
+        <div className="flex gap-3">
+          <img src={search} alt="" className=" invert ml-2" />
+  
+          <span className="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">
+            Search
+          </span>
+
+        </div>
+        <img src={press} alt="" className="invert  mr-2" />
+         
+        </button>
+        </div>
+        
+        <ul className="flex w-[70vw] justify-end ">
           {navItems.map((item) =>
             item.active ? (
               <li key={item.name}>
@@ -63,24 +83,20 @@ function Header() {
 
                     navigate(item.slug);
                   }}
-                  className="inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
+                  className="inline-bock rounded-full px-6 py-2 text-[#f70] duration-200 hover:bg-blue-100 hover:text-black"
                 >
                   {item.name}
                 </button>
-               
               </li>
-
-            ) : null
+            ) : null,
           )}
-           {state.loginOpen &&<Login/> }
-           {state.signupOpen &&<Signup/> }
+          {state.loginOpen && <Login />}
+          {state.signupOpen && <Signup />}
           {authStatus && (
             <li>
               <LogOut />
             </li>
           )}
-
-
         </ul>
       </nav>
     </div>

@@ -39,7 +39,7 @@ function Home() {
   } else {
     if (posts.length === 0) {
       return (
-        <div className="h-[50vh] w-full bg-slate-700 py-8 text-center">
+        <div className="home min-h-screen w-full py-8 text-center">
           <div className="flex flex-wrap">
             <div className="w-full p-2">
               <h1

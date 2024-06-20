@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.header,.footer{
+    background-color: hsl(225deg 14.63% 16.08%);
+}
+.home{
+    background-color: hsl(228deg 9.8% 10%);
+}
+.active{
+    text-decoration: underline #f70;
+}
