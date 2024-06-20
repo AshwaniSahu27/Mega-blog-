@@ -2,7 +2,7 @@ import React from "react";
 
 function Loading() {
   return (
-    <div className="py-10 px-10 bg-[#45474B] h-screen">
+    <div className="py-10 px-10 allPosts h-screen">
       <div className="flex gap-4 flex-wrap">
         {Array.from({ length: 6 }).map((val,idx) => {
           return (

@@ -6,7 +6,7 @@
 .header,.footer{
     background-color: hsl(225deg 14.63% 16.08%);
 }
-.home{
+.home, .allPosts{
     background-color: hsl(228deg 9.8% 10%);
 }
 .active{
@@ -15,3 +15,16 @@
 .login{
     background-color: hsl(224deg 24.32% 36.27%);
 }
+
+.setting {
+    animation: example 15s infinite;
+  }
+
+  @keyframes example {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

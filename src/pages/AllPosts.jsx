@@ -17,7 +17,7 @@ function AllPosts() {
   return loading ? (
     <Loading />
   ) : (
-    <div className="bg-[#45474B] px-10 py-10">
+    <div className="allPosts px-10 py-10">
       <div
         className="flex flex-wrap gap-4
     "

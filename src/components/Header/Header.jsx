@@ -44,7 +44,7 @@ function Header() {
   ];
 
   return (
-    <div className="header w-full ">
+    <div className="header w-full sticky z-40 top-0 ">
       <nav className="flex justify-between px-3 py-2">
         <div className="flex gap-10 w-full ml-6">
 
@@ -52,7 +52,7 @@ function Header() {
         <div>
           <Logo />
         </div>
-        <button data-open-modal="" className="bg-black/60 border-[1px]  border-slate-600 rounded-md w-[35%] text-white flex justify-between items-center gap-3">
+        <button data-open-modal="" className="bg-black/60 border-[1px]  border-slate-600 rounded-md w-[45%] text-white flex justify-between items-center gap-3">
         
         <div className="flex gap-3">
           <img src={search} alt="" className=" invert ml-2" />
