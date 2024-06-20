@@ -50,14 +50,14 @@ function Login() {
   return createPortal(
     <div
       onClick={pageClick}
-      className={`fixed top-0 z-20 flex h-screen w-full items-center justify-center bg-slate-600/60 ${state.loginOpen ? "" : "hidden"} ${loader ? "" : ""}`}
+      className={` fixed top-0 z-20 flex h-screen w-full items-center justify-center backdrop-blur-[3px] ${state.loginOpen ? "" : "hidden"} ${loader ? "" : ""}`}
     >
       <div
-        className={`absolute left-1/2 top-1/2 h-8 w-8  animate-spin rounded-full border-[5px] border-t-blue-400 ${loader ? "" : "hidden"}`}
+        className={`absolute left-1/2 top-1/2 h-8 w-8  animate-spin rounded-full border-[5px] border-t-blue-400  ${loader ? "" : "hidden"}`}
       ></div>
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`mx-auto w-full max-w-lg  rounded-xl border border-black/10 p-10  ${loader ? "bg-[#c0d3dc]" : "bg-[#dff1fa]"}`}
+        className={` login mx-auto w-full max-w-lg  rounded-xl border border-black/10 p-10  ${loader ? "" : ""}`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">

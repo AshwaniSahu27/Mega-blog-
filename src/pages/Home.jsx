@@ -39,26 +39,26 @@ function Home() {
   } else {
     if (posts.length === 0) {
       return (
-        <div className="home min-h-screen w-full py-8 text-center">
-          <div className="flex flex-wrap">
-            <div className="w-full p-2">
+        <div className="home min-h-screen w-full py-8 flex flex-col justify-start items-center gap-2">
+          <div className="mt-8">
               <h1
                 onClick={() => dispatch(logOpen())}
-                className="cursor-pointer text-2xl font-bold hover:text-gray-500"
+                className="cursor-pointer text-3xl text-black font-bold hover:text-gray-500"
               >
                 Login to read posts
               </h1>
-              <h1 className="mt-5 text-zinc-900 flex flex-col justify-start items-center" >
-                Here is test Command To login: 
-
-                <h2 className=" text-blue-400 text-2xl">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Email  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: test@test.com</h2>
-                <h2 className=" text-green-400 text-2xl"> password &nbsp;:&nbsp; test1234</h2>
-                 
-                 
-              </h1>
-
-            </div>
           </div>
+           <h1 className="text-xl text-blue-500/50 mt-32">Here is sample to login</h1>
+           <div className="text-[#f70]/70 text-xl">
+            <h1>Email : test@test.com</h1>
+            <h1>password : test1234</h1>
+
+           </div>
+
+     
+           
+
+
         </div>
       );
     }

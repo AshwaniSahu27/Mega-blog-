@@ -48,14 +48,14 @@ function Signup() {
   return createPortal(
     <div
       onClick={pageClick}
-      className={`fixed top-0 z-20 flex h-screen w-full items-center justify-center bg-slate-600/60 ${
+      className={`fixed top-0 z-20 flex h-screen w-full items-center justify-center backdrop-blur-[3px] ${
         state.signupOpen ? "" : "hidden"
       }`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`mx-auto flex w-full max-w-lg flex-col gap-3 ${
-          loader ? "bg-[#c0d3dc]" : "bg-[#dff1fa]"
+        className={`login mx-auto flex w-full max-w-lg flex-col gap-3 ${
+          loader ? "" : ""
         } rounded-xl border border-black/10 p-10`}
       >
         <div
